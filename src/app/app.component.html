@@ -1,3 +1,5 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<input type="file" (change)="onFileSelected($event)">
+<button (click)="saveFile()">Save File</button>
+<div *ngIf="fileUrl">
+  <iframe [src]="getSafeUrl(fileUrl)" frameborder="0" width="100%" height="600"></iframe>
+</div>
